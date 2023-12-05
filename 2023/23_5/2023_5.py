@@ -17,7 +17,8 @@ def f_1():
         if common_elements > 0:
             points = pow(2, common_elements - 1)
             _count += points
-            print(_count)
+    print(_count)
+
 def f_2():
     lines = read_input_file_lines()
     _count = 0
@@ -30,10 +31,10 @@ def f_2():
         myN = [item for item in myNs.split(" ") if item.strip()]
         winN = [item for item in winNs.split(" ") if item.strip()]
         common_elements = len([element for element in myN if element in winN])
-        for i in range(_id+1,_id+common_elements+1):
+        for i in range(_id+1,_id+common_elements+1): # Copied cards
             copyList.append(i)
 
-        if _id in copyList:
+        if _id in copyList: # Copied cards from copied cards
             for _ in range(copyList.count(_id)):
                 for i in range(_id + 1, _id + common_elements + 1):
                     copyList.append(i)
